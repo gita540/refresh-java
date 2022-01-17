@@ -6,6 +6,7 @@ You may assume that each input would have exactly one solution, and you may not 
 You can return the answer in any order.*/
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class TwoSum {
@@ -22,8 +23,9 @@ public class TwoSum {
         }
 
     }
+
     //  Time complexity: O(n^2)
-    private static int[] twoSum_BruteForce(int[] inpArray, int target) {
+    public static int[] twoSum_BruteForce(int[] inpArray, int target) {
         for (int i = 0; i < inpArray.length - 1; i++) {
             for (int j = i + 1; j < inpArray.length; j++) {
                 if (target == inpArray[i] + inpArray[j]) {
@@ -34,4 +36,17 @@ public class TwoSum {
         return null;
     }
 
+    // Time complexity: O(n)
+    public static int[] twoSum(int[] inpArray, int target) {
+        HashMap<Integer, Integer> hashMap = new HashMap<>();
+        for (int i = 0; i < inpArray.length; i++) {
+            int diff = target - inpArray[i];
+            if (hashMap.containsKey(diff)) {
+                return new int[]{hashMap.get(diff), i};
+            } else {
+                hashMap.put(inpArray[i], i);
+            }
+        }
+        return null;
+    }
 }
