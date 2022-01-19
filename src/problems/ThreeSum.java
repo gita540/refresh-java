@@ -1,6 +1,8 @@
 package problems;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 /*Given an array of integers, find all triplets in the array that sum up to a given target value.You can assume that the input
@@ -20,30 +22,29 @@ public class ThreeSum {
         int tar = sc.nextInt();
         sc.close();
 
-        int[] res = threeSum_BruteForce(nums, tar);
-        if (res != null) {
-            System.out.println("Three Sum " + Arrays.toString(res));
-        } else {
-            System.out.println("No three sum ");
+        List<Integer[]> res = threeSum_BruteForce(nums, tar);
+        for (Integer[] triplets : res) {
+            for (int num : triplets) {
+                System.out.print(num + " ");
+            }
+            System.out.println();
         }
 
     }
 
     //  Time complexity: O(n^2)
-    public static int[] threeSum_BruteForce(int[] nums, int tar) {
-        int[] res = new int[3];
+    public static List<Integer[]> threeSum_BruteForce(int[] nums, int tar) {
+        List<Integer[]> res = new ArrayList<>();
         for (int i = 0; i < nums.length; i++) {
             for (int j = i + 1; j < nums.length; j++) {
                 for (int k = j + 1; k < nums.length; k++) {
                     if (nums[i] + nums[j] + nums[k] == tar) {
-                        res[0] = nums[i];
-                        res[1] = nums[j];
-                        res[2] = nums[k];
-                        return res;
+                        res.add(new Integer[]{nums[i], nums[j], nums[k]});
                     }
                 }
             }
+
         }
-        return null;
+        return res;
     }
 }
