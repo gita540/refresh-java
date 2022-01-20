@@ -14,41 +14,47 @@ class ThreeSumTest {
 
     @Test
     public void threeSumTest_1() {
-        int[] arr = {2, 0, 16, 78, 0, 9, 1};
-        List<Integer[]> res = ThreeSum.threeSum_BruteForce(arr, 12);
-        Integer[] exp = new Integer[]{2, 9, 1};
-        List<Integer[]> expRes = new ArrayList<>(Arrays.<Integer[]>asList(exp));
-        Assertions.assertEquals(expRes.size(),res.size());
-        assertThat(expRes, contains(res.toArray()));
+        int[] arr = {1,2,3,4,0};
+        List<Integer[]> act = ThreeSum.threeSum_BruteForce(arr, 6);
+        List<Integer[]>exp  = new ArrayList<>();
+        exp.add(0, new Integer[]{1,2,3});
+        exp.add(1, new Integer[]{2,4,0});
+        System.out.println(exp);
+        System.out.println(act);
+        Assertions.assertEquals(exp.size(),act.size());
+        assertThat(act.toArray(), equalTo(exp.toArray()));
+
     }
 
     @Test
     public void threeSumTest_2() {
-        int[] arr = {4, 0, 6, 78, 0, 19, 1};
-        List<Integer[]> res = ThreeSum.threeSum_BruteForce(arr, 88);
-        Integer[] exp = new Integer[]{4, 6, 78};
-        List<Integer[]> expRes = new ArrayList<>(Arrays.<Integer[]>asList(exp));
-        Assertions.assertEquals(expRes.size(),res.size());
-        assertThat(expRes, contains(res.toArray()));
+        int[] arr = {4, 0, 6, 78, -1, 9, 1};
+        List<Integer[]> act = ThreeSum.threeSum_BruteForce(arr, 10);
+        List<Integer[]>exp  = new ArrayList<>();
+        exp.add(0, new Integer[]{4,0,6});
+        exp.add(1, new Integer[]{0,9,1});
+
+        Assertions.assertEquals(act.size(),exp.size());
+        assertThat(act.toArray(), equalTo(exp.toArray()));
     }
 
     @Test
     public void threeSumTest_3() {
         int[] arr = {1, 0, -1, 5};
-        List<Integer[]> res = ThreeSum.threeSum_BruteForce(arr, 0);
-        Integer[] exp = new Integer[]{1,0,-1};
-        List<Integer[]> expRes = new ArrayList<>(Arrays.<Integer[]>asList(exp));
-        Assertions.assertEquals(expRes.size(),res.size());
-        assertThat(expRes, contains(res.toArray()));
+        List<Integer[]> act = ThreeSum.threeSum_BruteForce(arr, 0);
+        List<Integer[]>exp  = new ArrayList<>();
+        exp.add(0, new Integer[]{1,0,-1});
+        Assertions.assertEquals(act.size(),exp.size());
+        assertThat(act, contains(exp.toArray()));
     }
 
     @Test
     public void threeSumTest_4() {
         int[] arr = {1, 10, -1, 1};
-        List<Integer[]> res = ThreeSum.threeSum_BruteForce(arr, 1);
-        Integer[] exp = new Integer[]{1, -1, 1};
-        List<Integer[]> expRes = new ArrayList<>(Arrays.<Integer[]>asList(exp));
-        Assertions.assertEquals(expRes.size(),res.size());
-        assertThat(expRes, contains(res.toArray()));
+        List<Integer[]> act = ThreeSum.threeSum_BruteForce(arr, 1);
+        List<Integer[]>exp  = new ArrayList<>();
+        exp.add(0, new Integer[]{1,-1,1});
+        Assertions.assertEquals(act.size(),exp.size());
+        assertThat(act, contains(exp.toArray()));
     }
 }
