@@ -15,7 +15,8 @@ public class TwoSum {
         int[] inpArray = {3, 5, 7, 0, 12};
         System.out.println("Enter target element");
         int target = sc.nextInt();
-        int[] res = twoSum_BruteForce(inpArray, target);
+        TwoSum obj = new TwoSum();
+        int[] res = obj.twoSum_BruteForce(inpArray, target);
         if (res != null) {
             System.out.println("two sum equals to target is " + Arrays.toString(res));
         } else {
@@ -25,7 +26,7 @@ public class TwoSum {
     }
 
     //  Time complexity: O(n^2)
-    public static int[] twoSum_BruteForce(int[] inpArray, int target) {
+    public  int[] twoSum_BruteForce(int[] inpArray, int target) {
         for (int i = 0; i < inpArray.length - 1; i++) {
             for (int j = i + 1; j < inpArray.length; j++) {
                 if (target == inpArray[i] + inpArray[j]) {
@@ -37,7 +38,7 @@ public class TwoSum {
     }
 
     // Time complexity: O(n)
-    public static int[] twoSum(int[] inpArray, int target) {
+    public  int[] twoSum(int[] inpArray, int target) {
         HashMap<Integer, Integer> hashMap = new HashMap<>();
         for (int i = 0; i < inpArray.length; i++) {
             int diff = target - inpArray[i];

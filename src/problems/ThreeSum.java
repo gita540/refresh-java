@@ -21,8 +21,8 @@ public class ThreeSum {
         System.out.println("Enter target ");
         int tar = sc.nextInt();
         sc.close();
-
-        List<Integer[]> res = threeSum_BruteForce(nums, tar);
+        ThreeSum obj = new ThreeSum();
+        List<Integer[]> res = obj.threeSum_BruteForce(nums, tar);
         for (Integer[] triplets : res) {
             for (int num : triplets) {
                 System.out.print(num + " ");
@@ -33,7 +33,7 @@ public class ThreeSum {
     }
 
     //  Time complexity: O(n^2)
-    public static List<Integer[]> threeSum_BruteForce(int[] nums, int tar) {
+    public  List<Integer[]> threeSum_BruteForce(int[] nums, int tar) {
         List<Integer[]> res = new ArrayList<>();
         for (int i = 0; i < nums.length; i++) {
             for (int j = i + 1; j < nums.length; j++) {
@@ -46,5 +46,29 @@ public class ThreeSum {
 
         }
         return res;
+    }
+
+    // Time complexity: O(n^2)
+    public List<Integer[]> threeSum_Sorting(int[] nums, int target) {
+        List<Integer[]> result = new ArrayList<>();
+        //sort input array
+        Arrays.sort(nums);
+
+        for (int i = 0; i < nums.length; i++) {
+            int left = i + 1;
+            int right = nums.length - 1;
+            while (left < right) {
+                if (nums[i] + nums[left] + nums[right] == target) {
+                    result.add(new Integer[] { nums[i], nums[left], nums[right] });
+                    left++;
+                    right--;
+                } else if (nums[i] + nums[left] + nums[right] < target) {
+                    left++;
+                } else {
+                    right--;
+                }
+            }
+        }
+        return result;
     }
 }
