@@ -8,7 +8,7 @@ public class Search {
 
   public static void main(String[] args) {
     Scanner input = new Scanner(System.in);
-    System.out.println("Enter list to search");
+    System.out.println("Enter number of elements to search ");
     int n = input.nextInt();
     int[] nums = new int[n];
     System.out.println("Enter array elements");
