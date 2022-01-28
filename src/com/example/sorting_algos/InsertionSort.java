@@ -3,7 +3,7 @@ package com.example.sorting_algos;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class BubbleSort {
+public class InsertionSort {
 
   public static void main(String[] args) {
     Scanner input = new Scanner(System.in);
@@ -15,22 +15,24 @@ public class BubbleSort {
       nums[i] = input.nextInt();
     }
     input.close();
-    BubbleSort obj = new BubbleSort();
-    int[] res = obj.bubble_sort(nums);
+    InsertionSort obj = new InsertionSort();
+    int[] res = obj.insertion_sort(nums);
     System.out.println(Arrays.toString(res));
   }
 
-  //Time complexity : O(n^2)
-  public int[] bubble_sort(int[] nums) {
-    for (int i = 0; i < nums.length; i++) {
-      for (int j = 0; j < nums.length - 1; j++) {
-        if (nums[j] > nums[j + 1]) {
-          int temp = nums[j];
-          nums[j] = nums[j + 1];
-          nums[j + 1] = temp;
-        }
+  // Time Complexity : O(n2)
+  // Space complexity :O(1)
+  public int[] insertion_sort(int[] nums) {
+    for (int i =1; i<nums.length; i++){
+      int j = i-1;
+      int key = nums[i];
+      while ( j >=0 && nums[j]>key){
+        nums[j+1]= nums[j];
+        j= j-1;
       }
+      nums[j+1]=key;
     }
     return nums;
   }
+
 }
