@@ -1,4 +1,4 @@
-package test.sorting_algo;
+package test.sorting_algos;
 
 import static org.junit.jupiter.api.Assertions.*;
 
