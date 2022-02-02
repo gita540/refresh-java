@@ -1,9 +1,9 @@
-package test;
+package test.random_problems;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import problems.ThreeSum;
+import random_problems.ThreeSum;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;

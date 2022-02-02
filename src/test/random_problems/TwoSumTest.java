@@ -1,9 +1,9 @@
-package test;
+package test.random_problems;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import problems.TwoSum;
+import random_problems.TwoSum;
 
 public class TwoSumTest {
 

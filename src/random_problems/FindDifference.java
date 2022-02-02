@@ -1,4 +1,4 @@
-package problems;
+package random_problems;
 
 import java.util.Scanner;
 /*You are given two strings s and t.

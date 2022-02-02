@@ -1,4 +1,4 @@
-package problems;
+package random_problems;
 
 import java.util.ArrayList;
 import java.util.Arrays;
