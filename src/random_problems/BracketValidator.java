@@ -17,6 +17,8 @@ public class BracketValidator {
     sc.close();
   }
 
+//Time Complexity: O(n)
+ //Space Complexity: O(n)
   public boolean bracket_validator(String str) {
     // Initialize a stack to be used in the algorithm.
     Stack<Character> stack = new Stack<Character>();
@@ -25,11 +27,14 @@ public class BracketValidator {
       // If the current character is a closing bracket.
       if (map.containsKey(ch)) {
         // Get the top element of the stack. If the stack is empty, set a dummy value of '*'
+
         char topChar = stack.empty() ? '*' : stack.pop();
+
         // If the mapping for this bracket doesn't match the stack's top element, return false.
         if (topChar != map.get(ch)) {
           return false;
         }
+
       } else {
         stack.push(ch);
       }
