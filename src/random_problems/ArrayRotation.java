@@ -23,6 +23,9 @@ public class ArrayRotation {
     int[] arr = obj.left_rotation(nums, positions);
     System.out.println("Input Array After Left Rotation By " + positions + " Positions :");
     System.out.println(Arrays.toString(arr));
+    int[] arr1 = obj.left_rotation(nums, positions);
+    System.out.println("Input Array After right Rotation By " + positions + " Positions :");
+    System.out.println(Arrays.toString(arr1));
   }
 
   //Time complexity :O(n^2)
@@ -34,6 +37,22 @@ public class ArrayRotation {
       }
       nums[nums.length - 1] = temp;
     }
+    return nums;
+  }
+
+  //Time complexity :O(n^2)
+  public int[] right_rotation(int[] nums, int positions) {
+      int temp;
+
+      for (int i = 1; i <= positions; i++) {
+        temp = nums[nums.length-1];
+
+        for (int j = nums.length-1; j > 0; j--) {
+          nums[j] = nums[j-1];
+        }
+
+        nums[0] = temp;
+      }
     return nums;
   }
 
