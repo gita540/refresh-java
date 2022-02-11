@@ -14,7 +14,23 @@ public class DecomposeString {
   }
 
   private boolean decomposeString(String str) {
-    return true;
+    if (str.length() == 2 || str.charAt(0) != str.charAt(1)) {
+      return false;
+    }
+    int twoCount = 0;
+    for (int i = 1, count = 1; i <= str.length(); i++) {
+      if (i == str.length() || str.charAt(i - 1) != str.charAt(i)) {
+        if ((count %= 3) == 1) {
+          return false;
+        }
+        twoCount += count == 2 ? 1 : 0;
+        count = 1;
+      } else {
+        count++;
+      }
+    }
+    return twoCount == 1;
+
   }
 
 }
