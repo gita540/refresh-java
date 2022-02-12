@@ -13,7 +13,7 @@ public class DecomposeString {
     sc.close();
   }
 
-  private boolean decomposeString(String str) {
+  public boolean decomposeString(String str) {
     if (str.length() == 2 || str.charAt(0) != str.charAt(1)) {
       return false;
     }
