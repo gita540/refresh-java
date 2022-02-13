@@ -1,4 +1,4 @@
-package problems;
+package random_problems;
 
 import java.util.Arrays;
 import java.util.Scanner;
