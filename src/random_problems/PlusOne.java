@@ -23,7 +23,8 @@ public class PlusOne {
     System.out.println(Arrays.toString(res));
 
   }
-
+ // Time complexity:O(N) .
+  // Space complexity: O(N)
   public int[] plusOne(int[] digits) {
     int idx = digits.length - 1;
     while (idx >= 0) {
