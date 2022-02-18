@@ -14,6 +14,7 @@ public class BinaryAddition {
     BinaryAddition ba = new BinaryAddition();
     String res = ba.binaryAddition(bin1, bin2);
     System.out.println(res);
+    System.out.println(ba.binary_addition_with_java_api(bin1, bin2));
   }
 
   public String binaryAddition(String bin1, String bin2) {
@@ -39,5 +40,13 @@ public class BinaryAddition {
       sb.append(carry);
     }
     return sb.reverse().toString();
+  }
+
+  public String binary_addition_with_java_api(String bin1, String bin2) {
+    int b1 = Integer.parseInt(bin1, 2);
+    int b2 = Integer.parseInt(bin2, 2);
+    int sum = b1 + b2;
+    return Integer.toBinaryString(sum);
+
   }
 }
