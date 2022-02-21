@@ -16,11 +16,11 @@ public class MaximumSumSubArray {
     }
     sc.close();
     MaximumSumSubArray ob = new MaximumSumSubArray();
-    ob.maxsubArray(nums);
+    ob.maxSumSubArray(nums);
   }
 
   //Time Complexity: O(N^3)
-  private void maxsubArray(int[] nums) {
+  private void maxSumSubArray(int[] nums) {
     int sum;
     int maxSum = Integer.MIN_VALUE;
     for (int i = 0; i < nums.length; i++) {
